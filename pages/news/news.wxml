@@ -1,0 +1,39 @@
+<import src="../wxParse/wxParse.wxml" />
+<wxs module='tools' src='../../utils/moment.wxs'></wxs>
+
+<scroll-view class="mainbody">
+  <view class="news-title">
+    <text>{{news.title}}</text>
+  </view>
+  <view class="news-date">发布时间:{{tools.formatTime(news.created_at)}} 赞: {{news.like_count}} 阅读: {{news.read_count}}</view>
+  <template is="wxParse" data="{{wxParseData:newsContent.nodes}}" />
+  <view class="end">没有更多啦</view>
+  <view class="add-wrap" bindtap='taplike'>
+    <image wx:if="{{news.liked}}" mode="aspectFit" src="/assert/like.png"></image>
+    <image wx:else mode="aspectFit" src="/assert/unlike.png"></image>
+  </view>
+
+  <!-- 相似新闻 -->
+  <view class="related-title">相关推荐</view>
+  <view class="related-news-container">
+    <block wx:key="{{newsItem.id}}" wx:for="{{news.related_news}}" wx:for-item="newsItem">
+      <navigator url="./news?newsid={{newsItem.id}}">
+        <view class="news-item">
+          <view class="img" >
+            <image wx:if="{{newsItem.cover_image}}" src="{{newsItem.cover_image}}" mode="aspectFit"></image>
+            <image wx:else src="/assert/no-picture.jpg" mode="aspectFit"></image>
+          </view>
+          <view class="text-date">
+            <view class="text">
+              <text>{{newsItem.title}}</text>
+            </view>
+            <view class="news-footer">
+              <text>{{tools.formatTime(newsItem.created_at)}}</text>
+              <text>❤️{{newsItem.like_count}}</text>
+            </view>
+          </view>
+        </view>
+      </navigator>
+    </block>
+  </view>
+</scroll-view>

@@ -1,0 +1,26 @@
+<wxs module='tools' src='../../../utils/moment.wxs'></wxs>
+<view class="body">
+  <view class="load" hidden="{{hidden}}">加载中...</view>
+  <scroll-view scroll-y="true" class="news-container">
+    <block wx:key="{{newsItem.id}}" wx:for="{{newslist}}" wx:for-item="newsItem">
+      <navigator url="../../news/news?newsid={{newsItem.id}}">
+        <view class="news-item">
+          <view class="img" >
+            <image wx:if="{{newsItem.cover_image}}" src="{{newsItem.cover_image}}" mode="aspectFit"></image>
+            <image wx:else src="/assert/no-picture.jpg" mode="aspectFit"></image>
+          </view>
+          <view class="text-date">
+            <view class="text">
+              <text>{{newsItem.title}}</text>
+            </view>
+            <view class="news-footer">
+              <text>{{tools.formatTime(newsItem.created_at)}}</text>
+              <view id="{{newsItem.id}}" catchtap='deleteRecord'>删除记录</view>
+            </view>
+          </view>
+        </view>
+      </navigator>
+    </block>
+  </scroll-view>
+  <view class="load" hidden="{{hidden}}">加载中...</view>
+</view>

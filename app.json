@@ -1,0 +1,37 @@
+{
+  "pages": [
+    "pages/newslist/newslist",
+    "pages/news/news",
+    "pages/logs/logs",
+    "pages/profile/profile",
+    "pages/account/login/login",
+    "pages/account/register/register",
+    "pages/profile/myLike/myLike",
+    "pages/profile/myRead/myRead"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#FFF",
+    "navigationBarTitleText": "新闻小程序",
+    "navigationBarTextStyle": "black"
+  },
+  "sitemapLocation": "sitemap.json",
+  "tabBar": {
+    "color": "#8B4513",
+    "selectedColor": "#FF6347",
+    "list": [
+      {
+        "pagePath": "pages/newslist/newslist",
+        "text": "新闻",
+        "iconPath": "/assert/news_tab.png",
+        "selectedIconPath": "/assert/news_tab_selected.png"
+      },
+      {
+        "pagePath": "pages/profile/profile",
+        "text": "我的",
+        "iconPath": "/assert/user_tab.png",
+        "selectedIconPath": "/assert/user_tab_selected.png"
+      }
+    ]
+  }
+}

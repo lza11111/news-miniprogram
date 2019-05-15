@@ -1,0 +1,34 @@
+<scroll-view scroll-y="true">
+  <view class="graySpace"></view>
+  <view class="item-avatar-lg" bindtap='login'>
+    <image wx:if="{{userInfo.avatarUrl}}" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+    <image wx:else src="/assert/avater.jpeg"></image>
+    <view class="text_box padding">
+      <view class="flex" >
+        <text wx:if="{{userInfo.username.length > 0}}" class="title">{{userInfo.username}}</text>
+        <text wx:else>请登录！</text>
+      </view>
+    </view>
+  </view>
+  <view class="graySpace"></view>
+  <block wx:if="{{userInfo}}">
+    <view class="item-avatar-sm" bindtap="goMyRead">
+      <image src="/assert/history.png" />
+      <view style="padding-left:10px">
+        <text class="title">最近阅读</text>
+      </view>
+    </view>
+    <view class="item-avatar-sm" bindtap="goMyLike">
+      <image src="/assert/like-profile.png" />
+      <view style="padding-left:10px">
+        <text class="title">我的点赞</text>
+      </view>
+    </view>
+    <view class="item-avatar-sm" bindtap="logout">
+      <image src="/assert/exit.png" />
+      <view style="padding-left:10px">
+        <text class="title">退出登录</text>
+      </view>
+    </view>
+  </block>
+</scroll-view>

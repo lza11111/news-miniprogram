@@ -1,0 +1,38 @@
+<wxs module='tools' src='../../utils/moment.wxs'></wxs>
+<view class="body">
+  <view class="nav-bar">
+    <view bindtap="browsing" id="hot" style="color: {{color.hot}}">热点</view>
+    <view bindtap="browsing" id="rcmd" style="color: {{color.rcmd}}">推荐</view>
+    <view bindtap="browsing" id="wars" style="color: {{color.wars}}">军事</view>
+    <view bindtap="browsing" id="sports" style="color: {{color.sports}}">体育</view>
+    <view bindtap="browsing" id="tech" style="color: {{color.tech}}">科技</view>
+    <view bindtap="browsing" id="ent" style="color: {{color.ent}}">娱乐</view>
+  </view>
+  <view class="load" hidden="{{hidden}}">加载中...</view>
+  <scroll-view scroll-y="true" bindscrolltolower="loadmore" class="news-container" style='height:{{scrollHeight}}px;'>
+    <block wx:key="{{newsItem.id}}" wx:for="{{newslist}}" wx:for-item="newsItem">
+      <navigator url="../news/news?newsid={{newsItem.id}}">
+        <view class="news-item">
+          <view class="img">
+            <image wx:if="{{newsItem.cover_image}}" src="{{newsItem.cover_image}}" mode="aspectFit"></image>
+            <image wx:else src="/assert/no-picture.jpg" mode="aspectFit"></image>
+          </view>
+          <view class="text-date">
+            <view class="text">
+              <text>{{newsItem.title}}</text>
+            </view>
+            <view class="news-footer">
+              <text>{{tools.formatTime(newsItem.created_at)}}</text>
+              <view>
+                <text>❤️{{newsItem.like_count}} </text>
+                <text>👁{{newsItem.read_count}}</text>
+              </view>
+
+            </view>
+          </view>
+        </view>
+      </navigator>
+    </block>
+  </scroll-view>
+  <view class="load" hidden="{{hidden}}">加载中...</view>
+</view>

@@ -1,0 +1,86 @@
+.body {
+  font-size: 16px;
+  font-family: "PingFang SC",
+                 "Helvetica Neue",
+                 Helvetica,
+                 "Hiragino Sans GB",
+                 Arial,
+                 "Microsoft YaHei",
+                 "微软雅黑",
+                 sans-serif,
+                 "Segoe UI Emoji",
+                 "Segoe UI Symbol";
+  color: black;
+  position: relative;
+}
+
+.news-container {
+  height: fit-content;
+  margin: 2%;
+  box-sizing: border-box;
+  width: 96%;
+  position: relative;
+}
+
+.news-item {
+  display: flex;
+  flex-direction: row;
+  line-height: 30px;
+  border-bottom: 1px solid #e7f0d2;
+  height: 100px;
+  box-sizing: border-box;
+}
+
+.text-date {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100px;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 5px;
+}
+
+.text {
+  width: 60%;
+  box-sizing: border-box;
+  padding-right: 2%;
+}
+
+.img {
+  height: 100px;
+  width: 40%;
+  box-sizing: border-box;
+  padding-left: 2%;
+}
+
+.img image {
+  width: 100%;
+  height: 100%;
+}
+
+.news-footer {
+  font-size: 0.7rem;
+  color: #bdc6b8;
+}
+
+.load {
+  text-align: center;
+  margin-top: 10px;
+  box-shadow: 0 0 10px #ccc;
+  height: 30px;
+  position: relative;
+  top: 40px;
+}
+
+.account_icon {
+  width: 21px;
+  height: 21px;
+  margin-left: 5px;
+  margin-top: 6px;
+  display: inline-block;
+}
+
+.icon_view {
+  width: 25px !important;
+}

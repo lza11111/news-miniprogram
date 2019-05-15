@@ -1,0 +1,115 @@
+@import "../wxParse/wxParse.wxss";
+
+.mainbody {
+  font-size: 16px;
+  font-family: "PingFang SC",
+                 "Helvetica Neue",
+                 Helvetica,
+                 "Hiragino Sans GB",
+                 Arial,
+                 "Microsoft YaHei",
+                 "微软雅黑",
+                 sans-serif,
+                 "Segoe UI Emoji",
+                 "Segoe UI Symbol";
+  color: black;
+  line-height: 30px;
+  margin: 3%;
+  width: 94%;
+  min-height: 100%;
+}
+
+.wxParse-img {
+  width: 100%;
+  height: 200px;
+}
+
+.news-title {
+  width: 100%;
+  text-align: center;
+  font-size: 20px;
+}
+
+.news-date {
+  padding: 5px;
+  font-size: 15px;
+  text-align: center;
+  color: #ccc;
+}
+
+.end {
+  padding: 20px;
+  text-align: center;
+  color: #ccc;
+}
+
+.add-wrap {
+  height: 200rpx;
+  width: 200rpx;
+  position: fixed;
+  bottom: 150rpx;
+  right: 20rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9;
+}
+
+.related-news-container {
+  height: fit-content;
+  margin: 2%;
+  box-sizing: border-box;
+  width: 96%;
+  position: relative;
+}
+
+.news-item {
+  display: flex;
+  flex-direction: row;
+  line-height: 30px;
+  border-bottom: 1px solid #e7f0d2;
+  height: 100px;
+  box-sizing: border-box;
+}
+
+.text-date {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100px;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 5px;
+}
+
+.text {
+  width: 60%;
+  box-sizing: border-box;
+  padding-right: 2%;
+}
+
+.img {
+  height: 100px;
+  width: 40%;
+  box-sizing: border-box;
+  padding-left: 2%;
+}
+
+.img image {
+  width: 100%;
+  height: 100%;
+}
+
+.news-footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-size: 0.7rem;
+  color: #bdc6b8;
+}
+
+.related-title {
+  width: 100%;
+  text-align: center;
+  font-size: 17px;
+}
