@@ -39,7 +39,7 @@ Page({
   },
 
   logout: function () {
-    post('http://localhost:8080/api/users/logout/', {}, (res) => {
+    post('https://lza11111.com/api/users/logout/', {}, (res) => {
       app.globalData.userInfo = null;
       wx.switchTab({
         url: '/pages/newslist/newslist'

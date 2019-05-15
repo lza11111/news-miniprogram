@@ -21,5 +21,4 @@
       </navigator>
     </block>
   </scroll-view>
-  <view class="load" hidden="{{hidden}}">加载中...</view>
 </view>

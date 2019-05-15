@@ -2,7 +2,7 @@
 import './vendor/weapp-cookie/index'
 import { get } from './utils/request.js';
 
-const url = 'http://localhost:8080/api/users/';
+const url = 'https://lza11111.com/api/users/';
 
 App({
   onLaunch: function () {

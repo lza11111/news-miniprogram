@@ -26,7 +26,7 @@
   align-items: center;
   width: 100%;
   z-index: 2;
-  margin-top: -3px;
+  margin-top: -8px;
 }
 
 .nav-bar view {
@@ -64,7 +64,7 @@
 }
 
 .text {
-  width: 60%;
+  width: 100%;
   box-sizing: border-box;
   padding-right: 2%;
 }

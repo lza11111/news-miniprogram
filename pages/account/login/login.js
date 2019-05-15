@@ -1,7 +1,7 @@
 import { post } from '../../../utils/request.js';
 
 var app = getApp();
-const url = 'http://localhost:8080/api/users/login/'
+const url = 'https://lza11111.com/api/users/login/'
 Page({
   data: {
     phone: '',

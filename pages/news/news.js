@@ -1,9 +1,9 @@
 var WxParse = require('../wxParse/wxParse.js');
 import { get, post } from '../../utils/request.js';
 
-const newsUrl = 'http://localhost:8080/api/news/';
+const newsUrl = 'https://lza11111.com/api/news/';
 
-const unlikeUrl = 'http://localhost:8080/api/like/delete/';
+const unlikeUrl = 'https://lza11111.com/api/like/delete/';
 
 Page({
   data: {
@@ -28,7 +28,7 @@ Page({
 
   taplike: function () {
     const { news } = this.data;
-    const likeUrl = `http://localhost:8080/api/news/${news.id}/like/`;
+    const likeUrl = `https://lza11111.com/api/news/${news.id}/like/`;
     if (news.liked) {
       post(likeUrl, {
         cancel: true,

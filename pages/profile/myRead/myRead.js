@@ -1,5 +1,5 @@
 import { get, post } from '../../../utils/request.js'
-var url = 'http://localhost:8080/api/news/recent-read/';
+var url = 'https://lza11111.com/api/news/recent-read/';
 
 var app = getApp();
 
@@ -30,7 +30,7 @@ Page({
 
   deleteRecord: function (event){
     const { id } = event.currentTarget;
-    const url = `http://localhost:8080/api/news/${id}/delete-read/`;
+    const url = `https://lza11111.com/api/news/${id}/delete-read/`;
 
     post(url, {} ,(res) => {
       wx.showToast({

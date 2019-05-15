@@ -1,5 +1,5 @@
 import { get, post } from '../../../utils/request.js'
-var url = 'http://localhost:8080/api/news/like-list/';
+var url = 'https://lza11111.com/api/news/like-list/';
 
 var app = getApp();
 
