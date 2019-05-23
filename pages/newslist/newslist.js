@@ -130,6 +130,8 @@ Page({
   },
 
   reloadnews: function() {
+    wx.showNavigationBarLoading() //在标题栏中显示加载
+
     const {
       newstype,
       offset,
@@ -152,39 +154,10 @@ Page({
         hidden: true
       });
     });
-  },
 
-  onPullDownRefresh: function() {
-
-    wx.showNavigationBarLoading() //在标题栏中显示加载
-
-    const {
-      newstype
-    } = this.data;
-
-    this.setData({
-      hidden: false,
-    });
-
-    get(url, {
-      type: newstype,
-      offset: 0,
-      limit: 10,
-    }, (res) => {
-      this.setData({
-        offset: 10,
-        newslist: res.data.results,
-        hasMore: res.data.results.length > 0,
-        hidden: true
-      });
-    });
-
-    setTimeout(function() {
-
+    setTimeout(function () {
       wx.hideNavigationBarLoading() //完成停止加载
-
-      wx.stopPullDownRefresh() //停止下拉刷新
-
     }, 1500);
   },
+
 })

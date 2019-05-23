@@ -8,8 +8,8 @@
     <view bindtap="browsing" id="tech" style="color: {{color.tech}}">科技</view>
     <view bindtap="browsing" id="ent" style="color: {{color.ent}}">娱乐</view>
   </view>
-  <view class="load" hidden="{{hidden}}">加载中...</view>
   <scroll-view scroll-y="true" bindscrolltolower="loadmore" bindscrolltoupper="reloadnews" class="news-container" style='height:{{scrollHeight}}px;'>
+    <view class="load">松开后刷新...</view>
     <block wx:key="{{newsItem.id}}" wx:for="{{newslist}}" wx:for-item="newsItem">
       <navigator url="../news/news?newsid={{newsItem.id}}">
         <view class="news-item">

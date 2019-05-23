@@ -41,7 +41,6 @@
   box-sizing: border-box;
   width: 96%;
   position: relative;
-  top: 40px;
 }
 
 .news-item {
@@ -91,11 +90,8 @@
 
 .load {
   text-align: center;
-  margin-top: 10px;
-  box-shadow: 0 0 10px #ccc;
-  height: 30px;
+  width: 100%;
   position: relative;
-  top: 40px;
 }
 
 .account-icon {
