@@ -39,13 +39,21 @@ page{
   display: flex;
   justify-content: center;
 }
-.flex{
+.flex-username{
   display: flex;
+  flex-direction: column;
+  justify-content: start;
 }
 .title{
   font-family: "微软雅黑";
   font-size: 32rpx;
 }
+
+.title-id {
+  font-size: 15px;
+  color: #ccc;
+}
+
 .message{
   font-size: 30rpx;
 }

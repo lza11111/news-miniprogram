@@ -1,0 +1,26 @@
+<scroll-view scroll-y="true">
+  <view class="graySpace"></view>
+  <view class="item-avatar-sm" bindtap="editNickname">
+    <view class="menu-item">
+      <text class="title">修改昵称</text>
+      <text>></text>
+    </view>
+  </view>
+  <view class="item-avatar-sm" bindtap="editPassword">
+    <view class="menu-item">
+      <text class="title">修改密码</text>
+      <text>></text>
+    </view>
+  </view>
+</scroll-view>
+<modal hidden="{{nicknameModalHidden}}" title="昵称修改" confirm-text="提交" cancel-text="取消" bindcancel="nicknameCancel" bindconfirm="nicknameSubmit">  
+    <input class="input-border" type='text' placeholder="请输入昵称" bindinput="changeNickname" focus/>  
+</modal> 
+<modal hidden="{{passwordModalHidden}}" title="密码修改" confirm-text="提交" cancel-text="取消" bindcancel="passwordCancel" bindconfirm="passwordSubmit">  
+    <text>请输入旧密码</text>
+    <input class="input-border" type='password'placeholder="" focus/>
+     <text>请输入新密码</text>
+    <input class="input-border" type='password'placeholder="" />  
+     <text>再次输入新密码</text>
+    <input class="input-border" type='password'placeholder="" />  
+</modal> 

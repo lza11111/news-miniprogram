@@ -1,4 +1,7 @@
-import { get, post } from '../../utils/request.js'
+import {
+  get,
+  post
+} from '../../utils/request.js'
 var url = 'https://lza11111.com/api/news/';
 var app = getApp();
 var colors = {
@@ -42,7 +45,9 @@ Page({
 
   // 页面初始化 options为页面跳转所带来的参数
   onLoad: function(options) {
-    const { newstype } = this.data;
+    const {
+      newstype
+    } = this.data;
     var _this = this;
     this.setData({
       hidden: false, // 阴藏或显示加载更多
@@ -61,7 +66,7 @@ Page({
         hasMore: res.data.results.length > 0,
       });
     })
-    
+
     //获得窗口的高度，在划到页面最底部时加载更多要用
     wx.getSystemInfo({
       success: (res) => {
@@ -97,14 +102,19 @@ Page({
 
   //下拉或上拉加载更多
   loadmore: function(event) {
-    const { newstype, offset, newslist, hasMore } = this.data;
-    if(!hasMore) {
+    const {
+      newstype,
+      offset,
+      newslist,
+      hasMore
+    } = this.data;
+    if (!hasMore) {
       return;
     }
     this.setData({
       hidden: false,
     });
-    
+
     get(url, {
       type: newstype,
       offset: offset + 10,
@@ -117,5 +127,64 @@ Page({
         hidden: true
       });
     });
+  },
+
+  reloadnews: function() {
+    const {
+      newstype,
+      offset,
+      newslist
+    } = this.data;
+
+    this.setData({
+      hidden: false,
+    });
+
+    get(url, {
+      type: newstype,
+      offset: 0,
+      limit: 10,
+    }, (res) => {
+      this.setData({
+        offset: offset + 10,
+        newslist: res.data.results,
+        hasMore: res.data.results.length > 0,
+        hidden: true
+      });
+    });
+  },
+
+  onPullDownRefresh: function() {
+
+    wx.showNavigationBarLoading() //在标题栏中显示加载
+
+    const {
+      newstype
+    } = this.data;
+
+    this.setData({
+      hidden: false,
+    });
+
+    get(url, {
+      type: newstype,
+      offset: 0,
+      limit: 10,
+    }, (res) => {
+      this.setData({
+        offset: 10,
+        newslist: res.data.results,
+        hasMore: res.data.results.length > 0,
+        hidden: true
+      });
+    });
+
+    setTimeout(function() {
+
+      wx.hideNavigationBarLoading() //完成停止加载
+
+      wx.stopPullDownRefresh() //停止下拉刷新
+
+    }, 1500);
   },
 })

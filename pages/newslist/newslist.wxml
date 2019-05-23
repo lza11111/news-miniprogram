@@ -9,7 +9,7 @@
     <view bindtap="browsing" id="ent" style="color: {{color.ent}}">娱乐</view>
   </view>
   <view class="load" hidden="{{hidden}}">加载中...</view>
-  <scroll-view scroll-y="true" bindscrolltolower="loadmore" class="news-container" style='height:{{scrollHeight}}px;'>
+  <scroll-view scroll-y="true" bindscrolltolower="loadmore" bindscrolltoupper="reloadnews" class="news-container" style='height:{{scrollHeight}}px;'>
     <block wx:key="{{newsItem.id}}" wx:for="{{newslist}}" wx:for-item="newsItem">
       <navigator url="../news/news?newsid={{newsItem.id}}">
         <view class="news-item">

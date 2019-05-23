@@ -24,6 +24,10 @@ Page({
         url: '/pages/account/login/login',
       });
     }
+
+    wx.navigateTo({
+      url: '/pages/profile/edit/edit',
+    })
   },
 
   goMyLike: function () {

@@ -7,7 +7,8 @@
     "pages/account/login/login",
     "pages/account/register/register",
     "pages/profile/myLike/myLike",
-    "pages/profile/myRead/myRead"
+    "pages/profile/myRead/myRead",
+    "pages/profile/edit/edit"
   ],
   "window": {
     "backgroundTextStyle": "light",
