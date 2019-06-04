@@ -1,5 +1,6 @@
 // pages/profile/edit/edit.js
 import { post } from '../../../utils/request';
+var app = getApp();
 
 Page({
 
@@ -29,6 +30,7 @@ Page({
     post('https://lza11111.com/api/users/nickname/', {
       nickname
     }, () => {
+      app.globalData.userInfo.nickname = nickname;
       wx.showToast({
         title: '昵称修改成功!',
       })
