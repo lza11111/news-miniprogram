@@ -64,7 +64,7 @@ Page({
       title: '密码修改成功!',
     });
     this.setData({
-      nicknameModalHidden: true,
+      passwordModalHidden: true,
     })
   },
 
