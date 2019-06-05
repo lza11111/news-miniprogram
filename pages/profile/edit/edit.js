@@ -47,9 +47,6 @@ Page({
   },
 
   editPassword: function () {
-    wx.showToast({
-      title: '密码修改成功!',
-    })
     this.setData({
       passwordModalHidden: false,
     })
@@ -63,6 +60,9 @@ Page({
   },
 
   passwordSubmit: function () {
+    wx.showToast({
+      title: '密码修改成功!',
+    });
     this.setData({
       nicknameModalHidden: true,
     })
